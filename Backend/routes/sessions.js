@@ -6,6 +6,7 @@ module.exports = router;
 
 const Session = require('../models/session')
 
+
 // Routes
 
 // Get all sessions
