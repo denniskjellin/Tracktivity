@@ -1,0 +1,31 @@
+GET http://localhost:3000/sessions
+
+###
+
+GET http://localhost:3000/sessions/63bae2611d837c62347c9056
+
+
+###
+POST http://localhost:3000/sessions
+Content-Type: application/json
+
+{
+    "activity" : "Running",
+    "comment" : "Long run in the forrest, was raining a bit so pace a bit slover than usual.",
+    "date" : "2022-01-20",
+    "duration" : "54 minutes"
+}
+
+###
+
+DELETE http://localhost:3000/sessions/63bae435fd5ed1407a9b27b6
+
+###
+
+Patch http://localhost:3000/sessions/63baec7e367f67fc3b89cc6a
+Content-Type: application/json
+
+{
+    "activity" : "Svep en celssdius!!!"
+
+}

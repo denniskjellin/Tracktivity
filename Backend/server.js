@@ -1,22 +1,31 @@
+// load enviroment variables from .env file
 require('dotenv').config()
-
 // pull in express library
 const express = require('express')
 // app variable to configure the server
 const app = express()
 const mongoose = require('mongoose')
 
-// connection string (.env file has connection variable)
-mongoose.set('strictQuery', true);
-mongoose.connect(process.env.DATABASE_URL)
+// database connection
+mongoose.set('strictQuery', true)
+mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true})
+// variable withholding connection
 const db = mongoose.connection
 
-// established connection feedback
+// user feedback
 db.on('error', (error) => console.error(error))
-db.on('open', (error) => console.log('Connected to Database'))
+db.once('open', () => console.log('Connected to Database'))
 
-// Port
-const PORT = process.env.port || 3000
-// listen to port
-app.listen(PORT, () => console.log(`Server Started on port ${PORT}`))
+//accept json
+app.use(express.json())
+
+// set up routes
+const sessionsRouter = require('./routes/sessions')
+app.use('/sessions', sessionsRouter)
+
+// Listen to this port
+app.listen(3000, () => console.log('Server Started'))
+
+
+
 
