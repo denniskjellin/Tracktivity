@@ -10,15 +10,14 @@ import Footer from './components/Footer'
 function App() {
   return (
     <div className="App">
-      <body class="body-col-main">
       <Navbar></Navbar>
-      <main>
+      <div className="body-bg wrapper">
+      <main className="m-1">
       <h1>Hello World</h1>
-
       </main>
       <Footer></Footer>
-      </body>
     </div>
+   </div>
   );
 }
 

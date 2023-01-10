@@ -22,18 +22,22 @@ html {
     padding: 0;
   }
 
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fbfbfb;
+    
+}
+
 h1,h2,h3 {
     font-family: 'Montserrat', sans-serif;
 }
-body {
+
+//
+.wrapper {
     line-height: 1;
-    color: #202020;
-    background-color: #fbfbfb;
-    font-family: 'Poppins', sans-serif;
     display: flex;
-  flex-direction: column;
-  min-height: 100vh; /* make sure the parent container takes up at least the full height of the viewport */
-    
+    flex-direction: column;
+    min-height: 100vh; /* make sure the parent container takes up at least the full height of the viewport */
 }
 
 main {
