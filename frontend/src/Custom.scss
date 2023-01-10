@@ -3,8 +3,13 @@
 /* make the customizations */
 $theme-colors: (
     "info": tomato,
-    "danger": teal
-);
+    "danger": #264653,
+    "footer-col-main": #3c896d,
+    "nav-col-main": #f4f4f9,
+    "body-col-main": #f5f5f5,
+    "footer-text" : #fff 
+
+    );
 
 /* import bootstrap to set changes */
 @import "~bootstrap/scss/bootstrap";

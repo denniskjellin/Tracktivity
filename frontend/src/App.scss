@@ -30,8 +30,14 @@ body {
     color: #202020;
     background-color: #fbfbfb;
     font-family: 'Poppins', sans-serif;
+    display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* make sure the parent container takes up at least the full height of the viewport */
     
 }
 
+main {
+    flex: 1; /* take up all the remaining space in the parent container */
+  }
 
   
