@@ -1,4 +1,6 @@
+import React from 'react';
 import "./App.scss";
+import './index.css';
 
 function App() {
   return (
