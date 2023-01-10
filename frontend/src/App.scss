@@ -1,4 +1,5 @@
 
+@import "Custom";
 /* Import font
 ======================================= */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins&display=swap');
@@ -16,15 +17,21 @@ html {
     box-sizing: inherit;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+  }
+
 h1,h2,h3 {
     font-family: 'Montserrat', sans-serif;
 }
 body {
-    margin: 20px 0;
-    padding: 0;
     line-height: 1;
     color: #202020;
     background-color: #fbfbfb;
     font-family: 'Poppins', sans-serif;
     
 }
+
+
+  
