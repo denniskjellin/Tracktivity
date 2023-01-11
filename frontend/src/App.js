@@ -13,7 +13,9 @@ function App() {
   return (
     <BrowserRouter>
     <div className="App">
-      <Navbar></Navbar>
+      <Navbar>
+      
+      </Navbar>
       <div className="body-bg wrapper">
       <main className="m-1">
       <h1>Hello World!</h1>
