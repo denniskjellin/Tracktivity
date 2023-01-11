@@ -5,11 +5,26 @@ import reportWebVitals from './reportWebVitals';
 
 // Importing the Bootstrap CSS
 import 'bootstrap/dist/css/bootstrap.css';
+// import pages
+import SummaryPage from './pages/SummaryPage';
+// Router imports
+import { createBrowserRouter, RouterProvider, Route, } from 'react-router-dom';
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App/>
+  },
+  {
+    path: "/summary",
+    element: <SummaryPage/>
+  },
+]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 

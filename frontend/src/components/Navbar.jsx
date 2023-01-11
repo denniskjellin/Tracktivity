@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-
+import { Link } from "react-router-dom";
 
 function NavbarMain() {
   return (
@@ -18,7 +18,10 @@ function NavbarMain() {
             navbarScroll
           >
           
-            
+          <Link className="nav-link" to="/">Home</Link>
+            <Link className="nav-link" to="/summary">Summary</Link>
+           
+
           </Nav>
           <Form className="d-flex">
             <Form.Control
