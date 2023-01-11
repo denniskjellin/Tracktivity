@@ -4,11 +4,13 @@ import "bootstrap/dist/css/bootstrap.css";
 import "./App.scss";
 import "./index.css";
 import MainLayout from "./layout/MainLayout";
+import Activity from "./components/Activity";
 
 function App() {
   return (
     <MainLayout>
       <h1>Hello from App</h1>
+      <Activity />
     </MainLayout>
   );
 }
