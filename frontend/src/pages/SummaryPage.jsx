@@ -1,19 +1,13 @@
 import React from "react";
-import Navbar from "../components/Navbar"
-import Footer from "../components/Footer"
+
+import MainLayout from "../layout/MainLayout";
 
 
 function SummaryPage() {
   return (
-    <div className="App">
-      <Navbar />
-      <div className="body-bg wrapper">
-      <main className="m-1">
-      <h1>Hello Summary!</h1>
-      </main>
-      <Footer />
-    </div>
-   </div>
+    <MainLayout>
+      <h1>Hello from summary</h1>
+    </MainLayout>
   );
 }
 
