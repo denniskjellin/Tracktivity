@@ -1,12 +1,11 @@
 import React from "react";
-
 import MainLayout from "../layout/MainLayout";
 
 
 function SummaryPage() {
   return (
     <MainLayout>
-      <h1>Hello from summary</h1>
+      <h1>Hello from Mainlayout</h1>
     </MainLayout>
   );
 }

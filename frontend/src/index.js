@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 // import pages
 import SummaryPage from './pages/SummaryPage';
 // Router imports
-import { createBrowserRouter, RouterProvider, Route, } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 const router = createBrowserRouter([
   {
