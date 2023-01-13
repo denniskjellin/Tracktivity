@@ -39,14 +39,17 @@ function GetSessions() {
     return (
       <section>
         {data.map(data => (
-          <div key={data._id}>
-            <img className="dumbell" src={myImage} alt="My Image" />
-            <p>Exercise: {data.exercise}</p>
-            <p>Reps: {data.reps}</p>
-            <p>Weight: {data.weight}</p>
+          
+          <div key={data._id} className="border col-6 card">
+            <img className="dumbell card-img-top" src={myImage} alt="dumbell logo" />
+            <div className="card-body">
+            <h5 classname="card-title">Exercise: {data.exercise}</h5>
+            <p className="card-text">Reps: {data.reps}</p>
+            <p className="card-text">Weight: {data.weight}</p>
             <p>Date: {data.date}</p>
             <span onClick={() => clickDelete(data._id)}>Delete</span><br></br>
             <br></br>
+            </div>
           </div>
         ))}
       </section>

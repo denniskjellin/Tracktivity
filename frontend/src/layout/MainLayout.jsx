@@ -6,12 +6,12 @@ function MainLayout({children}) {
   return (
     <div className="App">
       <Navbar />
-      <div className="body-bg wrapper">
+      <div className="body-bg wrapper m-5">
         <main className="m-1">
           {children}
         </main>
-        <Footer />
       </div>
+      <Footer />
     </div>
   );
 }
