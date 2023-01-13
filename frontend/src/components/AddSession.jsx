@@ -2,6 +2,7 @@ import React from "react";
 
 
 class Form extends React.Component {
+  
     // create state variables, initiating them empry.
     state = {
       exercise: '',
@@ -15,6 +16,7 @@ class Form extends React.Component {
         [event.target.name]: event.target.value,
       });
     }
+    
   
     // handler for submit, fetch url + method post. Stringify the data.
     handleSubmit = (event) => {
@@ -27,13 +29,16 @@ class Form extends React.Component {
         body: JSON.stringify({ exercise, reps, weight, date })
       })
       .then(response => response.json())
+      // if form is submited, reload the page
       .then(data => {
         console.log('Success:', data);
+        window.location.reload();
       })
       .catch((error) => {
         console.error('Error:', error);
       });
     }
+
   
     // HTML with the form and handler on change and submit
     render() {
