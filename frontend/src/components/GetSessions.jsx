@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import myImage from '../images/dumbell.png'
 
 function GetSessions() {
 
@@ -39,6 +40,7 @@ function GetSessions() {
       <section>
         {data.map(data => (
           <div key={data._id}>
+            <img className="dumbell" src={myImage} alt="My Image" />
             <p>Exercise: {data.exercise}</p>
             <p>Reps: {data.reps}</p>
             <p>Weight: {data.weight}</p>
