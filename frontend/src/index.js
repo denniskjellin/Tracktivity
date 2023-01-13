@@ -16,7 +16,7 @@ const router = createBrowserRouter([
     element: <App/>
   },
   {
-    path: "/summary",
+    path: "/sessions",
     element: <SummaryPage/>
   },
 ]);

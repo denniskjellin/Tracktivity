@@ -20,8 +20,8 @@ function NavbarMain() {
             <Link className="nav-link" to="/">
               Home
             </Link>
-            <Link className="nav-link" to="/summary">
-              Summary
+            <Link className="nav-link" to="/sessions">
+              Sessions
             </Link>
           </Nav>
           <Form className="d-flex">
