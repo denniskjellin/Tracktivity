@@ -10,10 +10,10 @@ POST http://localhost:3000/sessions
 Content-Type: application/json
 
 {
-    "exercise" : "Running",
-    "reps" : "Long run in the forrest, was raining a bit so pace a bit slover than usual.",
-    "weight" : "2022-01-20",
-    "date" : "54 minutes"
+    "exercise" : "Benchpress",
+    "reps" : "12, 10, 9, failure",
+    "weight" : "22kg",
+    "date" : "2023-01-01"
 }
 
 ###
