@@ -1,5 +1,6 @@
 import React from "react";
 
+
 class Form extends React.Component {
     // create state variables, initiating them empry.
     state = {
@@ -38,26 +39,28 @@ class Form extends React.Component {
     render() {
       return (
         <form onSubmit={this.handleSubmit}>
-          <label>
-            Activity:
-            <input type="text" name="activity" onChange={this.handleChange} />
+          <div className="mb-3">
+          <label className="form-label">
+            Exercise:
+            <input className="form-control" type="text" name="activity" onChange={this.handleChange} />
           </label>
           <br />
-          <label>
-            Duration:
-            <input type="text" name="duration" onChange={this.handleChange} />
+          <label className="form-label">
+            Reps:
+            <input className="form-control" type="text" name="duration" onChange={this.handleChange} />
           </label>
           <br />
-          <label>
-            Note:
-            <textarea name="comment" onChange={this.handleChange} />
+          <label className="form-label">
+            Weight:
+            <input className="form-control" name="comment" onChange={this.handleChange} />
           </label>
           <br />
-          <label>
+          <label className="form-label">
             Date:
-            <input type="text" name="date" onChange={this.handleChange} />
+            <input className="form-control" type="text" name="date" onChange={this.handleChange} />
           </label>
           <br />
+          </div>
           <input type="submit" value="Submit" />
         </form>
       );
