@@ -2,17 +2,17 @@
 const mongoose = require('mongoose')
 const sessionSchema = new mongoose.Schema({
     // type of activity
-    activity: {
+    exercise: {
         type: String,
         required: true
     },
     // time of activity
-    duration: {
+    reps: {
         type: String,
         required: true
     },
     // comment 
-    comment: {
+    weight: {
         type: String,
         required: true
     },

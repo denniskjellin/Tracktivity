@@ -39,9 +39,9 @@ function GetSessions() {
       <section>
         {data.map(data => (
           <div key={data._id}>
-            <p>Name: {data.activity}</p>
-            <p>Duration: {data.duration}</p>
-            <p>Note: {data.comment}</p>
+            <p>Exercise: {data.exercise}</p>
+            <p>Reps: {data.reps}</p>
+            <p>Weight: {data.weight}</p>
             <p>Date: {data.date}</p>
             <span onClick={() => clickDelete(data._id)}>Delete</span><br></br>
             <br></br>

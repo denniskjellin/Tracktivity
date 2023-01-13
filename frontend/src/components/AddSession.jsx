@@ -4,9 +4,9 @@ import React from "react";
 class Form extends React.Component {
     // create state variables, initiating them empry.
     state = {
-      activity: '',
-      duration: '',
-      comment: '',
+      exercise: '',
+      reps: '',
+      weight: '',
       date: ''
     }
     // Triggered when some value are changed/entered in the form input fields.
@@ -20,11 +20,11 @@ class Form extends React.Component {
     handleSubmit = (event) => {
         const url = "http://localhost:3000/sessions"
       event.preventDefault();
-      const { activity, duration, comment, date } = this.state;
+      const { exercise, reps, weight, date } = this.state;
       fetch(url, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ activity, duration, comment, date })
+        body: JSON.stringify({ exercise, reps, weight, date })
       })
       .then(response => response.json())
       .then(data => {
@@ -42,17 +42,17 @@ class Form extends React.Component {
           <div className="mb-3">
           <label className="form-label">
             Exercise:
-            <input className="form-control" type="text" name="activity" onChange={this.handleChange} />
+            <input className="form-control" type="text" name="exercise" onChange={this.handleChange} />
           </label>
           <br />
           <label className="form-label">
             Reps:
-            <input className="form-control" type="text" name="duration" onChange={this.handleChange} />
+            <input className="form-control" type="text" name="reps" onChange={this.handleChange} />
           </label>
           <br />
           <label className="form-label">
             Weight:
-            <input className="form-control" name="comment" onChange={this.handleChange} />
+            <input className="form-control" name="weight" onChange={this.handleChange} />
           </label>
           <br />
           <label className="form-label">

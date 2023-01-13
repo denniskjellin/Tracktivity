@@ -26,9 +26,9 @@ router.get("/:id", getSession, (req, res) => {
 // Create one
 router.post("/", async (req, res) => {
     const session = new Session({
-        activity: req.body.activity,
-        duration: req.body.duration,
-        comment: req.body.comment,
+        exercise: req.body.exercise,
+        reps: req.body.reps,
+        weight: req.body.weight,
         date: req.body.date
     })
 
@@ -42,14 +42,14 @@ router.post("/", async (req, res) => {
 
 // Update one
 router.patch("/:id", getSession, async (req, res) => {
-    if (req.body.activity != null) {
-        res.session.activity = req.body.activity
+    if (req.body.exercise != null) {
+        res.session.exercise = req.body.exercise
     }
-    if (req.body.duration != null) {
-        res.session.duration = req.body.duration
+    if (req.body.reps != null) {
+        res.session.reps = req.body.reps
     }
-    if (req.body.comment != null) {
-        res.session.comment = req.body.comment
+    if (req.body.weight != null) {
+        res.session.weight = req.body.weight
     }
     if (req.body.date != null) {
         res.session.date = req.body.date
