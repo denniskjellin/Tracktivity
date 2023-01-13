@@ -43,7 +43,7 @@ class Form extends React.Component {
     // HTML with the form and handler on change and submit
     render() {
       return (
-        <form onSubmit={this.handleSubmit}>
+        <form className="m-1" onSubmit={this.handleSubmit}>
           <div className="mb-3">
           <label className="form-label">
             Exercise:

@@ -28,7 +28,7 @@ body {
     
 }
 
-h1,h2,h3 {
+h1,h2,h3,h4,h5,h6 {
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -37,7 +37,7 @@ h1,h2,h3 {
     line-height: 1;
     display: flex;
     flex-direction: column;
-    min-height: 80vh; /* make sure the parent container takes up at least the full height of the viewport */
+    min-height: 100vh; /* make sure the parent container takes up at least the full height of the viewport */
 }
 
 main {
@@ -49,3 +49,10 @@ main {
     max-width: 100px;
   }
 
+
+
+@media only screen and (max-width: 400px) {
+    .card {
+        min-width: 335px;
+    }
+  }

@@ -37,13 +37,15 @@ function GetSessions() {
     return <p>An error occurred: {error.message}</p>;
   } else if (data) {
     return (
-      <section>
+      <section style={{
+        display: 'flex', flexFlow: 'row', flexWrap: 'wrap'}
+    }>
         {data.map(data => (
           
-          <div key={data._id} className="border col-6 card">
+          <div key={data._id} className="col-sm-12 col-md-5 m-1 card">
             <img className="dumbell card-img-top" src={myImage} alt="dumbell logo" />
             <div className="card-body">
-            <h5 classname="card-title">Exercise: {data.exercise}</h5>
+            <h5 className="card-title">Exercise: {data.exercise}</h5>
             <p className="card-text">Reps: {data.reps}</p>
             <p className="card-text">Weight: {data.weight}</p>
             <p>Date: {data.date}</p>

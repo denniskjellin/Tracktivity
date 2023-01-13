@@ -7,13 +7,13 @@ function SummaryPage() {
 
   return (
     <MainLayout>
-    <div className="container-fluid">
+    <div className="container">
     <div className="row">
-      <div className="col-sm-6 col-md-8 border ">
+      <div className="col-sm-12 col-md-8">
         <h1>Content for the first cell</h1>
       <GetSessions></GetSessions>
       </div>
-      <div className="col-sm-6 col-md-4">
+      <div className="col-sm-12 col-md-4 border">
       <h1>Content for the second cell</h1>
       <AddSession></AddSession>
       </div>
