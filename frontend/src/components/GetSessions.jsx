@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 function GetSessions() {
+
+  
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const url = 'http://localhost:3000/sessions'
@@ -16,6 +18,20 @@ function GetSessions() {
       });
   }, []);
 
+  const deleteEndpoint = 'http://localhost:3000/sessions';
+  const clickDelete = async (id) => {
+    try {
+      // add id to the deleteEndpoint
+      const response = await axios.delete(`${deleteEndpoint}/` + id);
+      console.log(response);
+      //reload window when something is deleted
+      window.location.reload(true);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+
   if (error) {
     return <p>An error occurred: {error.message}</p>;
   } else if (data) {
@@ -27,7 +43,7 @@ function GetSessions() {
             <p>Duration: {data.duration}</p>
             <p>Note: {data.comment}</p>
             <p>Date: {data.date}</p>
-            <button key={data._id}>Delete Btn</button><br></br>
+            <span onClick={() => clickDelete(data._id)}>Delete</span><br></br>
             <br></br>
           </div>
         ))}
