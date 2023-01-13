@@ -66,7 +66,7 @@ class Form extends React.Component {
           </label>
           <br />
           </div>
-          <input type="submit" value="Submit" />
+          <input className="submit" type="submit" value="Submit" />
         </form>
       );
     }

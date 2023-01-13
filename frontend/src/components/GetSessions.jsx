@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import myImage from '../images/dumbell.png'
 
+
 function GetSessions() {
 
   
@@ -39,17 +40,18 @@ function GetSessions() {
     return (
       <section style={{
         display: 'flex', flexFlow: 'row', flexWrap: 'wrap'}
-    }>
+    }
+    >
         {data.map(data => (
           
           <div key={data._id} className="col-sm-12 col-md-5 m-1 card">
             <img className="dumbell card-img-top" src={myImage} alt="dumbell logo" />
             <div className="card-body">
-            <h5 className="card-title">Exercise: {data.exercise}</h5>
-            <p className="card-text">Reps: {data.reps}</p>
-            <p className="card-text">Weight: {data.weight}</p>
-            <p>Date: {data.date}</p>
-            <span onClick={() => clickDelete(data._id)}>Delete</span><br></br>
+            <h2 className="h4">Exercise - {data.exercise}</h2>
+            <h3 className="h5">Reps: </h3><p>{data.reps}</p>
+            <h3 className="h5">Weight: </h3><p>{data.weight}</p>
+            <h3 className="h5">Date: </h3><p>{data.date}</p>
+            <button className="delete" onClick={() => clickDelete(data._id)}>Delete</button><br></br>
             <br></br>
             </div>
           </div>

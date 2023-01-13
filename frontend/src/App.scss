@@ -47,12 +47,50 @@ main {
 
   .dumbell {
     max-width: 100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
   }
 
+  .card {
+    background-color: #f0f0f0;
+  }
+
+  form {
+    background-color: #f0f0f0;
+    padding: 1rem;
+    border-radius: 10px;
+  }
 
 
 @media only screen and (max-width: 400px) {
     .card {
         min-width: 335px;
     }
+    .form-control {
+        width: 18rem;
+    }
+  }
+
+  .delete {
+    background-color: #8d0202; /* Green */
+    color: white;
+    padding: 0.5rem 0.8rem;
+    border-radius: 5px;
+  }
+
+  .submit {
+    background-color: #028d30; /* Green */
+    color: white;
+    padding: 0.5rem 0.8rem;
+    border-radius: 5px;
+  }
+
+  .delete:hover {
+    background-color: #e40202;
+  }
+
+  .submit:hover {
+    background-color: #00b63d;
   }

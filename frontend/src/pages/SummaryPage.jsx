@@ -10,11 +10,11 @@ function SummaryPage() {
     <div className="container">
     <div className="row">
       <div className="col-sm-12 col-md-8">
-        <h1>Content for the first cell</h1>
+        <h1>Overview</h1>
       <GetSessions></GetSessions>
       </div>
-      <div className="col-sm-12 col-md-4 border">
-      <h1>Content for the second cell</h1>
+      <div className="col-sm-12 col-md-4">
+      <h2>Add Ecercise</h2>
       <AddSession></AddSession>
       </div>
       </div>
