@@ -34,7 +34,8 @@ function GetSessions() {
         }}
       >
         {data.map((data) => (
-          <ReadSession data={data} />
+          //write out Sessions from database, from ReadSessions component
+          <ReadSession data={data} key={data._id}  />
         ))}
       </section>
     );
