@@ -1,76 +1,84 @@
-import React from "react";
+import { useState } from "react";
 
+const AddSession = () => {
+  // set variables
+  const [exercise, setExercise] = useState("");
+  const [reps, setReps] = useState("");
+  const [weight, setWeight] = useState("");
+  const [date, setDate] = useState("");
+  const [error, setError] = useState(null);
 
-class Form extends React.Component {
-  
-    // create state variables, initiating them empry.
-    state = {
-      exercise: '',
-      reps: '',
-      weight: '',
-      date: ''
-    }
-    // Triggered when some value are changed/entered in the form input fields.
-    handleChange = (event) => {
-      this.setState({
-        [event.target.name]: event.target.value,
-      });
-    }
-    
-  
-    // handler for submit, fetch url + method post. Stringify the data.
-    handleSubmit = (event) => {
-        const url = "http://localhost:3000/sessions"
-      event.preventDefault();
-      const { exercise, reps, weight, date } = this.state;
-      fetch(url, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ exercise, reps, weight, date })
-      })
-      .then(response => response.json())
-      // if form is submited, reload the page
-      .then(data => {
-        console.log('Success:', data);
-        window.location.reload();
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-      });
-    }
+  //handle submit, prevent page from reloading
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  
-    // HTML with the form and handler on change and submit
-    render() {
-      return (
-        <form className="form-add" onSubmit={this.handleSubmit}>
-          <div className="mb-3">
-          <label className="form-label">
-            Exercise:
-            <input className="form-control" type="text" name="exercise" onChange={this.handleChange} />
-          </label>
-          <br />
-          <label className="form-label">
-            Reps:
-            <input className="form-control" type="text" name="reps" onChange={this.handleChange} />
-          </label>
-          <br />
-          <label className="form-label">
-            Weight:
-            <input className="form-control" name="weight" onChange={this.handleChange} />
-          </label>
-          <br />
-          <label className="form-label">
-            Date:
-            <input className="form-control" type="text" name="date" onChange={this.handleChange} />
-          </label>
-          <br />
-          </div>
-          <input className="submit" type="submit" value="Submit" />
-          
-        </form>
-      );
-    }
-  }
+    const activity = { exercise, reps, weight, date };
+    // base url
+    const url = "http://localhost:3000/sessions";
 
-  export default Form;
+    // fetch
+    const response = await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ exercise, reps, weight, date }),
+    });
+    const json = await response.json();
+
+    // if response is bad, throw error
+    if (!response.ok) {
+      setError(json.error);
+    }
+    // if success, set variables in form to empty and reload the page
+    if (response.ok) {
+      setExercise("");
+      setReps("");
+      setWeight("");
+      setDate("");
+      setError(null);
+      console.log("new exercise added.", json);
+      window.location.reload();
+    }
+  };
+
+  return (
+    <form className="form-add" onSubmit={handleSubmit}>
+      <h3>Add a new exercise</h3>
+      <div className="mb-3">
+        <label className="form-label">Exercise Title:</label>
+        <input
+          className="form-control"
+          type="text"
+          onChange={(e) => setExercise(e.target.value)}
+          value={exercise}
+        />
+
+        <label className="form-label">Reps:</label>
+        <input
+          className="form-control"
+          type="text"
+          onChange={(e) => setReps(e.target.value)}
+          value={reps}
+        />
+
+        <label className="form-label">Weight:</label>
+        <input
+          className="form-control"
+          type="text"
+          onChange={(e) => setWeight(e.target.value)}
+          value={weight}
+        />
+
+        <label className="form-label">Date:</label>
+        <input
+          className="form-control"
+          type="text"
+          onChange={(e) => setDate(e.target.value)}
+          value={date}
+        />
+      </div>
+      <input className="submit" type="submit" value="Submit" />
+    </form>
+  );
+};
+
+export default AddSession;
