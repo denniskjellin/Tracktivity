@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import axios from "axios";
 import ReadSession from "./ReadSession";
-
+import EditableSession from "./EditableSession";
 
 function GetSessions() {
   // set variables
@@ -18,26 +18,39 @@ function GetSessions() {
       .catch((error) => {
         setError(error);
       });
-      // fire method once
+    // fire method once
   }, []);
 
- // below I write out the session stored in database with the help of component ReadSession.jsx
+  const handleEditClick = (event, data) => {
+    event.preventDefault();
+    setEditSessionId(data._id)
+  }
+  const [editSessionId, setEditSessionId] = useState(null);
+  // below I write out the session stored in database with the help of component ReadSession.jsx
   if (error) {
     return <p>An error occurred: {error.message}</p>;
   } else if (data) {
     return (
-      <section
-        style={{
-          display: "flex",
-          flexFlow: "row",
-          flexWrap: "wrap",
-        }}
-      >
-        {data.map((data) => (
-          //write out Sessions from database, from ReadSessions component
-          <ReadSession data={data} key={data._id}  />
-        ))}
-      </section>
+      <form className="form-add">
+        <section
+          style={{
+            display: "flex",
+            flexFlow: "row",
+            flexWrap: "wrap",
+          }}
+        >
+          {data.map((data) => (
+            <Fragment key={data._id}>
+              {editSessionId === data._id ? (
+                <EditableSession />
+              ) : (
+                <ReadSession data={data} key={data._id} handleEditClick={handleEditClick} />
+              )}
+            </Fragment>
+            //write out Sessions from database, from ReadSessions component
+          ))}
+        </section>
+      </form>
     );
   } else {
     return <p>Loading...</p>;

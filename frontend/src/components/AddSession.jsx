@@ -9,6 +9,7 @@ const AddSession = () => {
   const [date, setDate] = useState("");
   const [error, setError] = useState(null);
   
+ 
 
   //handle submit, prevent page from reloading
   const handleSubmit = async (e) => {
@@ -102,6 +103,7 @@ const AddSession = () => {
         />
       </div>
       <button className="submit" type="submit" value="Submit">Submit <FaAngleDoubleRight></FaAngleDoubleRight></button>
+      
       
       {error && <div className="error mt-2">{error}</div>}
     </form>
