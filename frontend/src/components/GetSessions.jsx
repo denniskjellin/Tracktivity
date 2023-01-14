@@ -11,7 +11,6 @@ function GetSessions() {
       .get(url)
       .then((response) => {
         setData(response.data);
-        console.log(response.data);
       })
       .catch((error) => {
         setError(error);
@@ -23,7 +22,6 @@ function GetSessions() {
     try {
       // add id to the deleteEndpoint
       const response = await axios.delete(`${deleteEndpoint}/` + id);
-      console.log(response);
       //reload window when something is deleted
       window.location.reload(true);
     } catch (error) {
