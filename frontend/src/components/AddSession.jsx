@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { FaAngleDoubleRight } from "react-icons/fa";
 
 const AddSession = () => {
   // set variables
@@ -100,7 +101,8 @@ const AddSession = () => {
           value={date}
         />
       </div>
-      <input className="submit" type="submit" value="Submit" />
+      <button className="submit" type="submit" value="Submit">Submit <FaAngleDoubleRight></FaAngleDoubleRight></button>
+      
       {error && <div className="error mt-2">{error}</div>}
     </form>
   );
