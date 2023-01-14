@@ -21,7 +21,7 @@ function GetSessions() {
   const clickDelete = async (id) => {
     try {
       // add id to the deleteEndpoint
-      const response = await axios.delete(`${deleteEndpoint}/` + id);
+      await axios.delete(`${deleteEndpoint}/` + id);
       //reload window when something is deleted
       window.location.reload(true);
     } catch (error) {

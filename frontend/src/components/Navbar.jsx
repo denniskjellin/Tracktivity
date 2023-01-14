@@ -4,12 +4,17 @@ import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
+import myImage from "../images/dumbell.png";
 
 function NavbarMain() {
   return (
     <Navbar bg="nav-bg" expand="lg">
       <Container fluid>
-        <Navbar.Brand href="#">Tracktivity</Navbar.Brand>
+        <Navbar.Brand href="#"><img
+              className="dumbell card-img-top"
+              src={myImage}
+              alt="back to start"
+            /></Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
