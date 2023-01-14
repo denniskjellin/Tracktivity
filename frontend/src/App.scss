@@ -24,7 +24,7 @@ html {
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #fbfbfb;
+    background-color: #f5f5f5;
     
 }
 
@@ -44,7 +44,7 @@ main {
     flex: 1; /* take up all the remaining space in the parent container */
   }
 
-
+  // dumbell img
   .dumbell {
     max-width: 100px;
     display: block;
@@ -54,13 +54,26 @@ main {
   }
 
   .card {
-    background-color: #f0f0f0;
+    background-color: white;
+    box-shadow: 10px;
   }
 
+  //form add exercise
   .form-add {
-    background-color: #f0f0f0;
-    padding: 1rem;
+    background-color: white;
+    padding: 2rem 2rem;
     border-radius: 10px;
+  }
+
+  //div error handling
+  div.error {
+    padding: 10px;
+    background: #ffefef;
+    border: 1px solid red;
+    color: red;
+    border-radius: 4px;
+    margin: 20px 0;
+    
   }
 
 
@@ -74,6 +87,7 @@ main {
     }
   }
 
+  // delete btn
   .delete {
     background-color: #8d0202; /* Green */
     color: white;
@@ -81,11 +95,18 @@ main {
     border-radius: 5px;
   }
 
+  //sub btn
   .submit {
     background-color: #3c896d; /* Green */
+    border:0;
     color: white;
-    padding: 0.5rem 0.8rem;
-    border-radius: 5px;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .exercise-title {
+    color:  #3c896d;
   }
 
   .delete:hover {

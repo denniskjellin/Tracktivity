@@ -50,7 +50,7 @@ function GetSessions() {
               alt="dumbell logo"
             />
             <div className="card-body">
-              <h2 className="h4">Exercise - {data.exercise}</h2>
+              <h2 className="h3 mb-4 exercise-title">{data.exercise}</h2>
               <h3 className="h5">Reps: </h3>
               <p>{data.reps}</p>
               <h3 className="h5">Weight: </h3>
