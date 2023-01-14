@@ -12,7 +12,8 @@ const Session = require('../models/session')
 // Get all sessions
 router.get("/", async (req, res) => {
     try {
-        const sessions = await Session.find()
+        // get the newest added post on the top of the page
+        const sessions = await Session.find({}).sort({posted: -1})
         res.json(sessions)
     } catch (err) {
         res.status(500).json({ message: err.message })
@@ -21,6 +22,7 @@ router.get("/", async (req, res) => {
 // Getting one by id
 router.get("/:id", getSession, (req, res) => {
   res.send(res.session);
+  
 });
 
 // Create one
