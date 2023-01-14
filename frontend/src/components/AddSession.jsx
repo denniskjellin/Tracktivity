@@ -75,7 +75,7 @@ const AddSession = () => {
 
         <label htmlFor="reps" className="form-label">Reps:</label>
         <input id="reps"
-        placeholder="12r, 10r, 7r, failure"
+        placeholder="12r, 10r, 7r"
           className="form-control mt-.5 mb-1" 
           type="text"
           onChange={(e) => setReps(e.target.value)}
@@ -84,7 +84,7 @@ const AddSession = () => {
 
         <label htmlFor="weight" className="form-label">Weight:</label>
         <input id="weight"
-        placeholder="20kg, 18kg, 15kg"
+        placeholder="20kg, 18kg"
           className="form-control mt-.5 mb-1"
           type="text"
           onChange={(e) => setWeight(e.target.value)}
