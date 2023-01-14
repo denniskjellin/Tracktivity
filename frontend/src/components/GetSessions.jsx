@@ -23,34 +23,36 @@ function GetSessions() {
 
   const handleEditClick = (event, data) => {
     event.preventDefault();
-    setEditSessionId(data._id)
-  }
+    setEditSessionId(data._id);
+  };
   const [editSessionId, setEditSessionId] = useState(null);
   // below I write out the session stored in database with the help of component ReadSession.jsx
   if (error) {
     return <p>An error occurred: {error.message}</p>;
   } else if (data) {
     return (
-      <form className="form-add">
-        <section
-          style={{
-            display: "flex",
-            flexFlow: "row",
-            flexWrap: "wrap",
-          }}
-        >
-          {data.map((data) => (
-            <Fragment key={data._id}>
-              {editSessionId === data._id ? (
-                <EditableSession />
-              ) : (
-                <ReadSession data={data} key={data._id} handleEditClick={handleEditClick} />
-              )}
-            </Fragment>
-            //write out Sessions from database, from ReadSessions component
-          ))}
-        </section>
-      </form>
+      <section
+        style={{
+          display: "flex",
+          flexFlow: "row",
+          flexWrap: "wrap",
+        }}
+      >
+        {data.map((data) => (
+          <Fragment key={data._id}>
+            {editSessionId === data._id ? (
+              <EditableSession />
+            ) : (
+              <ReadSession
+                data={data}
+                key={data._id}
+                handleEditClick={handleEditClick}
+              />
+            )}
+          </Fragment>
+          //write out Sessions from database, from ReadSessions component
+        ))}
+      </section>
     );
   } else {
     return <p>Loading...</p>;
