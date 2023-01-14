@@ -22,6 +22,17 @@ db.once('open', () => console.log('Connected to Database'))
 //accept json
 app.use(express.json())
 
+//middleware
+app.use((req, res, next) => {
+    console.log(req.path, req.method)
+    next()
+})
+
+// routes
+app.get('/', (req,res) => {
+    res.json({msg: 'Welcome to the app'})
+})
+
 // set up routes
 const sessionsRouter = require('./routes/sessions')
 app.use('/sessions', sessionsRouter)

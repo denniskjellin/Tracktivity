@@ -12,7 +12,7 @@ const AddSession = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const activity = { exercise, reps, weight, date };
+    // const workout = { exercise, reps, weight, date };
     // base url
     const url = "http://localhost:3000/sessions";
 
