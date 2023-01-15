@@ -9,8 +9,6 @@ const AddSession = () => {
   const [date, setDate] = useState("");
   const [error, setError] = useState(null);
   
- 
-
   //handle submit, prevent page from reloading
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -18,14 +16,12 @@ const AddSession = () => {
     // const workout = { exercise, reps, weight, date };
     // base url
     const url = "http://localhost:3000/sessions";
-
     // fetch
     const response = await fetch(url, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ exercise, reps, weight, date }),
     });
-   
 
     // simple controlls, validation
     if(!date > 0) {
@@ -43,7 +39,6 @@ const AddSession = () => {
     if(!exercise > 0) {
       setError("Enter a exercise title")
     }
-
 
      // if response is bad, throw error
      if (!reps && !date && !exercise && !weight) {
@@ -104,8 +99,7 @@ const AddSession = () => {
         />
       </div>
       <button className="submit" type="submit" value="Submit">Submit <FaAngleDoubleRight></FaAngleDoubleRight></button>
-      
-      
+
       {error && <div className="error mt-2">{error}</div>}
     </form>
   );
