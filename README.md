@@ -5,13 +5,17 @@ Detta är ett MERN stack projekt som har MongoDB, Nodemon, Node.js och Express i
 För att testköra mitt projekt behöver du ha MongoDB installerat på din enhet.
 
 * Starta upp MongoDB genom att skriva följande i terminalen:
-mongod
-mongosh
 
+```sh
+mongod 
+```
+```sh
+mongosh 
+```
 Ovan fungerar om du har installerat MongoDB globalt, annars kan du behöva stå i din MongoDB filmapp för att utföra dessa kommandon.
 
 ## Starta upp Back-end
-## #Öppna upp terminalen:
+### Öppna upp terminalen:
 När du MongoDB är startad så är nästa steg att öppna upp terminalen och utföra följande steg.
 
 ### Ställ dig i Backend mappen och installera:
