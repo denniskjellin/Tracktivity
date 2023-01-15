@@ -1,6 +1,7 @@
 import React from "react";
 import { FaAngleDoubleRight } from "react-icons/fa";
 
+// form for edit
 const EditableSession = () => {
   return (
     

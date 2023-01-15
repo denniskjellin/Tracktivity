@@ -21,10 +21,12 @@ function GetSessions() {
     // fire method once
   }, []);
 
+  // handle click on edit button
   const handleEditClick = (event, data) => {
     event.preventDefault();
     setEditSessionId(data._id);
   };
+  // set to null
   const [editSessionId, setEditSessionId] = useState(null);
   // below I write out the session stored in database with the help of component ReadSession.jsx
   if (error) {

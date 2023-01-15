@@ -16,6 +16,7 @@ const ReadSession = ({ data, handleEditClick }) => {
     }
   };
   return (
+    // format card with the data
     <div key={data._id} className="col-sm-12 col-md-5 m-1 card">
       <img className="dumbell card-img-top" src={myImage} alt="dumbell logo" />
       <div className="card-body">

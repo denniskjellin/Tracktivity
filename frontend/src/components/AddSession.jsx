@@ -63,6 +63,7 @@ const AddSession = () => {
     }
   };
 
+  // form for adding session
   return (
     <form className="form-add" onSubmit={handleSubmit}>
       <div className="mb-3">

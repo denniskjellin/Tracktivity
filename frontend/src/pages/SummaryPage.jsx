@@ -4,7 +4,7 @@ import GetSessions from "../components/GetSessions";
 import AddSession from "../components/AddSession";
 function SummaryPage() {
 
-
+// page for displaying the data
   return (
     <MainLayout>
     <div className="container">

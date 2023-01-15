@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
+// dynamic main layout page
 function MainLayout({children}) {
   return (
     <div className="App">
